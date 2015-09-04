@@ -45,7 +45,6 @@
 	            <div class="column col-sm-10 col-xs-11" id="main">
 	                
 	                <!-- top nav -->
-	                     <% if user_signed_in? %>
 	              	<div class="navbar navbar-blue navbar-static-top">  
 	                    <div class="navbar-header">
 	                      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,7 +75,7 @@
 	                        <a href="#"><span class="badge">badge</span></a>
 	                      </li>
 	                    </ul>
-	               
+	                    <% if user_signed_in? %>
 	                    <ul class="nav navbar-nav navbar-right">
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
