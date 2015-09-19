@@ -17,8 +17,10 @@ default: &default
   password:
   socket: /opt/lampp/var/mysql/mysql.sock
 
-development:
-  <<: *default
+development:  
+  adapter: sqlite3
+  encoding: utf8
+  pool: 5  
   database: getintouch_development
 
 # Warning: The database defined as "test" will be erased and
