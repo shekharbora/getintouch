@@ -1,0 +1,12 @@
+<div class="well"> 
+	<%@post = Status.new %>
+	<%= form_for(@post, url: home_post_status_path,:remote=>true) do |f|
+ 		%>
+	<h4>What's New</h4>
+	 <div class="form-group" style="padding:14px;">
+	 	<%=f.text_area :status,:class=>"form-control",:placeholder=>"Update your status"%>
+	</div>
+	<%=f.submit 'Post',:class=>"btn btn-primary pull-right"%>
+	<!-- <button class="btn btn-primary pull-right" type="button">Post</button><ul class="list-inline"><li><a href=""><i class="glyphicon glyphicon-upload"></i></a></li><li><a href=""><i class="glyphicon glyphicon-camera"></i></a></li><li><a href=""><i class="glyphicon glyphicon-map-marker"></i></a></li></ul> -->
+	<%end%>
+</div>
