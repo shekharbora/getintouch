@@ -1,0 +1,65 @@
+             
+                <div class="padding">
+                    <div class="full col-sm-9">                      
+                        <!-- content -->                      
+                      	<div class="row">                          
+                         <!-- main col left --> 
+                          </div>                          
+                          <!-- main col right -->
+                          <div class="col-sm-12"> 
+                           <%= render 'your_status'%>
+                          </div>
+                          <div class="col-sm-12 main-question_answer_div"> 
+                          <% if @question_answers.present?%>
+                              <% @question_answers.each do |f| %>
+                                 <div class="panel panel-default">
+                                   <div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= f.question%> ?</h4></div>
+                                    <div class="panel-body">
+                                      <div class="clearfix"></div>                                     
+                                       <%= f.answer%>
+                                    </div>
+                                    <hr>
+                                 </div>  
+                             <%end%>   
+                             <%else%>
+                            No Questions !!!                         
+                          <%end%>  
+                          </div>
+                       </div><!--/row-->
+                      <div class="page hide-pagination-block">
+                        <div class="nav-bar">
+                          <div class="nav-bar-inner padding10" Style="padding:4px;">
+                            <center>
+                              <span class="element" Style="float:none;"> <%= will_paginate @question_answers %></span>
+                            </center>
+                          </div>
+                        </div>
+                      </div>
+                        <div class="row">
+                          <div class="col-sm-6">
+                            <a href="#">Twitter</a> <small class="text-muted">|</small> <a href="#">Facebook</a> <small class="text-muted">|</small> <a href="#">Google+</a>
+                          </div>
+                        </div>
+                      
+                        <div class="row" id="footer">    
+                          <div class="col-sm-6">
+                            
+                          </div>
+                          <div class="col-sm-6">
+                            <p>
+                            <a href="#" class="pull-right">©Copyright 2016</a>
+                            </p>
+                          </div>
+                        </div>
+                      
+                      <hr>                      
+                    <!--   <h4 class="text-center">
+                      <a href="#" target="ext">Download this Template @Bootply</a>
+                      </h4> -->
+                        
+                      <hr>
+                    </div><!-- /col-9 -->
+                </div><!-- /padding -->
+           
+     
+
