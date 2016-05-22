@@ -3,7 +3,7 @@ before_action :authenticate_user!
 respond_to :html,:js
 
 	def index
-        @question_answers =QuestionAnswer.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6) 
+        @question_answers = QuestionAnswer.order(created_at: :desc).paginate(:page => params[:page], :per_page => 6) 
         respond_with(@question_answers)  
 
 	end
