@@ -10,3 +10,16 @@ $('[data-toggle=offcanvas]').click(function() {
     $('#btnShow').toggle();
 });
 });
+
+
+function paginate(){
+		$(window).scroll(function() {
+					var url;
+					url = $('.pagination .next_page').attr('href');
+					// alert('fgfgf2');
+					if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {						
+						$('.pagination').show().html("<img src='https://s3-eu-west-1.amazonaws.com/1stspade-email-images/images/22.gif'>");						
+						 return $.getScript(url);
+					}
+				});
+}

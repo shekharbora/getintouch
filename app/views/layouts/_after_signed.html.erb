@@ -10,10 +10,10 @@
 	            	</ul>
 	               
 	                <ul class="nav hidden-xs" id="lg-menu">
-	                    <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li>
-	                    <li><%= link_to blogs_path do %><i class="glyphicon glyphicon-list"></i> Blogs<% end %></li>
-	                    <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li>
-	                    <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li>
+	                    <!-- <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li> -->
+	                    <li><%= link_to  '' do %><i class="">==></i> Interview Question (Ruby)<% end %></li>
+	                    <!-- <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li> -->
+	                    <!-- <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li> -->
 	                </ul>
 	                <ul class="list-unstyled hidden-xs" id="sidebar-footer">
 	                    <li>
@@ -47,23 +47,23 @@
 	                      <a href="/" class="navbar-brand logo">b</a>
 	                  	</div>
 	                  	<nav class="collapse navbar-collapse" role="navigation">
-	                    <form class="navbar-form navbar-left">
+	                  	<%=form_tag search_question_home_index_path  ,:id=>'frm1',:class=>"navbar-form navbar-left",:method=>:get,:remote=>true do %>	                  
 	                        <div class="input-group input-group-sm" style="max-width:360px;">
-	                          <input type="text" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
+	                          <input type="text" class="form-control" placeholder="Search Your Question" name="search" id="srch-term">
 	                          <div class="input-group-btn">
-	                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+	                            <button class="btn btn-default" type="submit">Search</button>
 	                          </div>
 	                        </div>
-	                    </form>
+	                    <%end%>
 	                    <ul class="nav navbar-nav">
 	                      <li>
 	                        <%=link_to home_index_path do %><i class="glyphicon glyphicon-home"></i> Home<% end %>
 	                      </li>
 	                      <li>
-	                        <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a>
+	                        <!-- <a href="#postModal" role="button" data-toggle="modal"><i class="glyphicon glyphicon-plus"></i> Post</a> -->
 	                      </li>
 	                      <li>
-	                        <a href="#"><span class="badge">badge</span></a>
+	                        <!-- <a href="#"><span class="badge">badge</span></a> -->
 	                      </li>
 	                    </ul>
 	                    <% if user_signed_in? %>
@@ -71,10 +71,10 @@
 	                      <li class="dropdown">
 	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
 	                        <ul class="dropdown-menu">
-	                          <li><a href="">Edit Profile</a></li>
-	                          <li><a href="">Blog</a></li>
-	                          <li><a href="">Profile</a></li>
-	                          <li><a href="">Setting</a></li>
+	                          <!-- <li><a href="">Edit Profile</a></li> -->
+	                          <!-- <li><a href="">Blog</a></li> -->
+	                          <!-- <li><a href="">Profile</a></li> -->
+	                          <!-- <li><a href="">Setting</a></li> -->
 	                          <li><%= link_to 'Logout',destroy_user_session_path, method: :delete%></li>
 	                        </ul>
 	                      </li>
@@ -92,7 +92,7 @@
 	        </div>
 	    </div>
 	    <!--post modal-->
-		<div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+		<!-- <div id="postModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
 		  <div class="modal-dialog">
 		  <div class="modal-content">
 		      <div class="modal-header">
@@ -116,4 +116,4 @@
 		  </div>
 		</div>
 	        
-
+ -->

@@ -136,6 +136,24 @@ hr {
   text-shadow:0 0 1px;
   border-radius:2px;
 }
+
+.logo2 {
+  display:block;
+  padding:3px;
+  background-color:#fff;
+  color:#3B5999;
+  height:28px;
+  width:115px;
+  margin:9px;
+  margin-right:2px;
+  margin-left:15px;
+  font-size:20px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  text-shadow:0 0 1px;
+  border-radius:2px;
+}
 #sidebar-footer {
   background-color:#444;
   position:absolute;

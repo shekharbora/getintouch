@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+  resources :question_answers
+
   resources :blogs
 
   devise_for :users
-  resources :home
-  post 'home/post_status'
-  # end
+  resources :home do 
+    collection do
+      post 'post_status'
+      get 'search_question'
+      end
+  end
+  # post 'home/post_status'
+  # get 'home/search_question'
+  # # end
 
   # devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
