@@ -7,23 +7,25 @@
                           </div>                          
                           <!-- main col right -->
                           <div class="col-sm-12"> 
-                           <%= render 'your_status'%>
+                          <div id="question-form">
+                             <%= render 'your_status'%>
+                          </div>
                           </div>
                           <div class="col-sm-12 main-question_answer_div"> 
-                          <% if @question_answers.present?%>
-                              <% @question_answers.each do |f| %>
-                                 <div class="panel panel-default">
-                                   <div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= f.question%> ?</h4></div>
-                                    <div class="panel-body">
-                                      <div class="clearfix"></div>                                     
-                                       <%= f.answer%>
-                                    </div>
-                                    <hr>
-                                 </div>  
-                             <%end%>   
-                             <%else%>
-                            No Questions !!!                         
-                          <%end%>  
+                            <% if @question_answers.present?%>
+                                <% @question_answers.each do |f| %>
+                                   <div class="panel panel-default" id="<%=f.id%>">
+                                     <div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= f.question%> ?</h4></div>
+                                      <div class="panel-body">
+                                        <div class="clearfix"></div>                                     
+                                         <%= raw(f.answer)%>
+                                      </div>
+                                      <hr>
+                                   </div>  
+                               <%end%>   
+                               <%else%>
+                              No Questions !!!                         
+                            <%end%>  
                           </div>
                        </div><!--/row-->
                       <div class="page hide-pagination-block">
