@@ -76,11 +76,11 @@
 	                          <!-- <li><a href="">Edit Profile</a></li> -->
 	                          <!-- <li><a href="">Blog</a></li> -->
 	                          <!-- <li><a href="">Profile</a></li> -->
-	                          <li><a href="">Loged in as <%= "#{current_user.firstname+' '+current_user.lastname}"%> </a></li>
+	                          <li><a href="">Loged in as <%= get_desplay_name(current_user)%> </a></li>
 	                          <li><%= link_to 'Logout',destroy_user_session_path, method: :delete%></li>
 	                        </ul>
 	                      </li>
-	                      <li><a href="#">Welcome <%= "#{current_user.firstname+' '+current_user.lastname}"%></a></li>
+	                      <li><a href="#">Welcome <%=get_desplay_name(current_user)%></a></li>
 	                    </ul>
 	                    <%end%>
 	                  	</nav>
