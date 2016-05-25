@@ -1,7 +1,7 @@
 class QuestionAnswersController < ApplicationController
   before_action :set_question_answer, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html,:js
 
   def index
     @question_answers = QuestionAnswer.all
