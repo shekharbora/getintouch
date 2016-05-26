@@ -23,7 +23,7 @@
                                      </div>
                                      <div class="panel-heading">
                                      <span>
-                                       <a href="#">Posted By <%if f.user.present?%><%= get_desplay_name(current_user)%><%end%></a>
+                                       <a href="#">Posted By <%if f.user.present?%><%= get_posted_name(current_user,f)%><%end%></a>
                                        <small class="text-muted">|</small> <a href="">Posted  on <%=  distance_of_time_in_words(f.try(:created_at),Time.now) %> ago </a>
                                         <% if current_user.id == f.user_id%>
                                             <%= link_to 'Delete Question',  question_answer_path(id: f.id ), method: :delete, data: { confirm: 'Are you sure?' },remote: true ,:class=>"pull-right"%>
