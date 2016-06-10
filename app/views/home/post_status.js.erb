@@ -1,3 +1,3 @@
-$(".main-question_answer_div").prepend('<div class="panel panel-default" id="<%=@staus.id%>"><div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= @staus.question%> ?</h4></div><div class="panel-body"><div class="clearfix"></div><%= @staus.answer%></div><hr></div>'); 
+$(".main-question_answer_div").prepend('<div class="panel panel-default" id="<%=@staus.id%>"><div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= @staus.question%> ?</h4></div><div class="panel-body"><div class="clearfix"><%=raw(@staus.answer)%></div></div><hr></div>'); 
 $(".question-form").html('<%= j render 'your_status' %>');
 alert("kjbhksdfhkjf");
