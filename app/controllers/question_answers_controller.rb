@@ -33,7 +33,9 @@ class QuestionAnswersController < ApplicationController
 
   def destroy
     @question_answer.destroy
-    respond_with(@question_answer)
+    respond_to do |format|
+       format.html { redirect_to home_index_path, notice: 'Thanks' }
+   end 
   end
 
   private
