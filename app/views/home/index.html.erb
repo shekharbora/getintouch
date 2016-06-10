@@ -26,7 +26,7 @@
                                        <a href="#">Posted By <%if f.user.present?%><%= get_posted_name(f)%><%end%></a>
                                        <small class="text-muted">|</small> <a href="">Posted  on <%=  distance_of_time_in_words(f.try(:created_at),Time.now) %> ago </a>
                                         <% if current_user.id == f.user_id%>
-                                            <%= link_to 'Delete Question',  question_answer_path(id: f.id ), method: :delete, data: { confirm: 'Are you sure?' },remote: true ,:class=>"pull-right"%>
+                                            <%= link_to 'Delete Question',  question_answer_path(id: f.id ), method: :delete, data: { confirm: 'Are you sure?' },:class=>"pull-right"%>
                                             <%end%>
                                       </span>      
                                      </div>
