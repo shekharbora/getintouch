@@ -75,7 +75,7 @@
 	                        <ul class="dropdown-menu">
 	                          <!-- <li><a href="">Edit Profile</a></li> -->
 	                          <!-- <li><a href="">Blog</a></li> -->
-	                          <li><%= link_to 'Members',all_members_home_index_path%></li>
+	                          <!-- <li><%#= link_to 'Members',all_members_home_index_path%></li> -->
 	                          <li><a href="">Loged in as <%= get_desplay_name(current_user)%> </a></li>
 	                          <li><%= link_to 'Logout',destroy_user_session_path, method: :delete%></li>
 	                        </ul>
