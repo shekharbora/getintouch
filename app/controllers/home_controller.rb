@@ -13,7 +13,7 @@ respond_to :html,:js
     	@staus  = current_user.question_answers.new(question_answer_params)
     	@staus.save
     	respond_to do |format|
-         format.js{}
+           format.html { redirect_to home_index_path, notice: 'Thanks' }
        end 
     end
     
@@ -22,6 +22,10 @@ respond_to :html,:js
         respond_to do |format|
          format.js{}
        end 
+    end
+
+    def all_members
+        @members=User.all
     end
 
 private
