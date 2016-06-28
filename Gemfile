@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 gem 'will_paginate', '~> 3.0.6'
 gem 'ckeditor'
+gem 'rack-cors', :require => 'rack/cors'
+
 group :development, :test do
  # gem 'mysql2'
  gem 'pry'
