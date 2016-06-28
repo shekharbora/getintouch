@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     collection do
       post 'post_status'
       get 'search_question'
+      get 'all_members'
+      get 'all_question'
       end
   end
   # post 'home/post_status'
