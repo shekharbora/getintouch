@@ -78,6 +78,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.5)
+    rack-cors (0.4.0)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.1.0)
@@ -153,6 +154,7 @@ DEPENDENCIES
   mysql2 (~> 0.3.20)
   pg
   pry
+  rack-cors
   rails (= 4.1.0)
   rails_12factor (= 0.0.2)
   sass-rails (~> 4.0.3)
