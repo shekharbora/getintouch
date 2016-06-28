@@ -28,6 +28,14 @@ respond_to :html,:js
         @members=User.all
     end
 
+    def all_question
+        @question_answers = QuestionAnswer.all
+        respond_with(@users) do |format|
+          format.json { render :json => @question_answers.as_json }
+          format.html
+      end
+  end
+
 private
    
     def question_answer_params
