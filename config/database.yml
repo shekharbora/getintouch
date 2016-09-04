@@ -59,7 +59,6 @@ development:
   adapter: mysql2
   database: getintouch
   username: root
-  password: 
   host: 127.0.0.1
   pool: 5
   timeout: 5000
@@ -84,10 +83,9 @@ test:
 
 production:
   adapter: postgresql
-  # database: pokerstop
   database: d234i1gpk247b6
   username: yiiqszkvgnrcas
-  password:  vIwzoJ1QUyLOZFnmAryIgdzUP4
+  password: vIwzoJ1QUyLOZFnmAryIgdzUP4
   host: ec2-54-227-255-240.compute-1.amazonaws.com
   pool: 5
   timeout: 5000

@@ -28,7 +28,7 @@ gem 'spring',        group: :development
 gem 'will_paginate', '~> 3.0.6'
 gem 'ckeditor'
 gem 'rack-cors', :require => 'rack/cors'
-
+gem 'bootstrap-glyphicons'
 group :development, :test do
  # gem 'mysql2'
  gem 'pry'

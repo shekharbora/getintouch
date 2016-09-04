@@ -1,8 +1,39 @@
 <div class="wrapper">
-    <div class="box">
-        <div class="row row-offcanvas row-offcanvas-left">  
-            <!-- main right col -->
-              <div class="column col-sm-12 col-xs-12" id="main">
+      <div class="box">
+          <div class="row row-offcanvas row-offcanvas-left">                      
+            
+              <!-- sidebar -->
+              <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
+                
+                  <ul class="nav">
+                  <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
+                </ul>
+                 
+                  <ul class="nav hidden-xs" id="lg-menu">
+                      <!-- <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li> -->
+                      <li><%= link_to  '' do %><i class="">=></i> Interview Question (Ruby On Rails)<% end %></li>
+                      <!-- <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li> -->
+                      <!-- <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li> -->
+                  </ul>
+                  <ul class="list-unstyled hidden-xs" id="sidebar-footer">
+                      <li>
+                        <a href="#"><h3>No Worries</h3> <i class="glyphicon glyphicon-heart-empty"></i> Ruby</a>
+                      </li>
+                  </ul>
+                
+                  <!-- tiny only nav-->
+                <ul class="nav visible-xs" id="xs-menu">
+                      <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
+                      <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
+                      <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
+                      <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
+                  </ul>
+                
+              </div>
+              <!-- /sidebar -->
+
+              <!-- main right col -->
+              <div class="column col-sm-10 col-xs-11" id="main">
                   
                   <!-- top nav -->
                   <div class="navbar navbar-blue navbar-static-top">  
@@ -10,19 +41,57 @@
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                           <span class="sr-only">Toggle</span>
                           <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+                    <!-- <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> -->
                         </button>
                         <a href="/" class="navbar-brand logo">b</a>
                         <a href="/" class="navbar-brand logo2">GetInTouch</a>
-                        
                       </div>
-                    
+                      <nav class="collapse navbar-collapse" role="navigation">
+                      <%=form_tag search_question_home_index_path  ,:id=>'frm1',:class=>"navbar-form navbar-left",:method=>:get,:remote=>true do %>                   
+                          <div class="input-group input-group-sm" style="max-width:360px;">
+                            <input type="text" class="form-control" placeholder="Search Your Question" name="search" id="srch-term">
+                            <div class="input-group-btn">
+                              <button class="btn btn-default" type="submit">Search</button>
+                            </div>
+                          </div>
+                      <%end%>
+                      <ul class="nav navbar-nav">
+                        <li>
+                          <%=link_to home_index_path do %><i class="glyphicon glyphicon-home"></i> Home<% end %>
+                        </li>
+                        <li>
+                          <a href="/users/sign_up"><span class="badge">Sign Up </span></a>
+                        </li>
+                        <li>
+                          <a href="/users/sign_in"><span class="badge">Log In</span></a>
+                        </li>
+                      </ul>
+                      <% if user_signed_in? %>
+                     
+                      <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
+                          <ul class="dropdown-menu">
+                            <!-- <li><a href="">Edit Profile</a></li> -->
+                            <!-- <li><a href="">Blog</a></li> -->
+                            <!-- <li><%#= link_to 'Members',all_members_home_index_path%></li> -->
+                            <li><a href="">Loged in as <%= get_desplay_name(current_user)%> </a></li>
+                            <li><%= link_to 'Logout',destroy_user_session_path, method: :delete%></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Welcome <%=get_desplay_name(current_user)%></a></li>
+                      </ul>
+                      <%end%>
+                      </nav>
                   </div>
                   <!-- /top nav -->
+
                   <%= yield %>
               </div>
-         
-         </div>
+                <!-- /main -->
+          
+             </div>
+          </div>
       </div>
-  </div>    
+     

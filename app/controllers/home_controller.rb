@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
-before_action :authenticate_user!,except: [:all_question]
+before_action :authenticate_user!,except: [:all_question,:index]
 respond_to :html,:js
 
 	def index
