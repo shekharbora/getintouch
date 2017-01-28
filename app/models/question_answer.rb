@@ -5,7 +5,7 @@ class QuestionAnswer < ActiveRecord::Base
 
 def self.search(search)
   if search  	
-  where("question like ?", "#{search}%")
+  where("question like ?", "%#{search}%")
   else
     find(:all)
   end

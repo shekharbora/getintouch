@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20160522103212) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "blogs", force: true do |t|
     t.string   "title"
     t.string   "body"

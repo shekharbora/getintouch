@@ -1,1 +1,1 @@
-$('.main-question_answer_div').html('<%@question_answers.each do |f|%><div class="panel panel-default"><div class="panel-heading"><a href="#" class="pull-right"></a> <h4><%= f.question%> ?</h4></div><div class="panel-body"><div class="clearfix"></div><%= f.answer%></div><hr></div><%end%>'); 
+$('.main-question_answer_div').html('<%= j render "home/search" ,:question_answers=>@question_answers%>'); 

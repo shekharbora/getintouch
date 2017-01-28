@@ -32,7 +32,8 @@ gem 'bootstrap-glyphicons'
 group :development, :test do
  # gem 'mysql2'
  gem 'pry'
- gem 'mysql2', '~> 0.3.20'
+ # gem 'mysql2', '~> 0.3.20'
+ gem 'pg'
 end
 
 group :production do
