@@ -1,7 +1,7 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy]
   respond_to :html
-  before_action :authenticate_user!
+  before_action :authenticate_user!,except: [:index]
   def index
     @blogs = Blog.all
     respond_with(@blogs)

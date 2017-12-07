@@ -5,13 +5,14 @@
 	            <!-- sidebar -->
 	            <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
 	              
-	              	<ul class="nav">
+	              	<ul class="nav nav-pills nav-stacked">
 	          			<li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
 	            	</ul>
 	               
-	                <ul class="nav hidden-xs" id="lg-menu">
+	                <ul class="nav nav-pills nav-stacked hidden-xs" id="lg-menu">
 	                    <!-- <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li> -->
-	                    <li><%= link_to  '' do %><i class="">=></i> Interview Question (Ruby On Rails)<% end %></li>
+	                    <li class="active"><%= link_to  home_index_path do %><b>Interview Questions (Ruby On Rails)</b><% end %></li>
+	                     <li><%= link_to  blogs_path do %><b>Blogs</b><% end %></li>
 	                    <!-- <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li> -->
 	                    <!-- <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li> -->
 	                </ul>
@@ -86,8 +87,9 @@
 	                  	</nav>
 	                </div>
 	                <!-- /top nav -->
-
+	                	<div style="margin-top:20px;">
 	            		<%= yield %>
+	            		</div>
 	            </div>
             		<!-- /main -->
           

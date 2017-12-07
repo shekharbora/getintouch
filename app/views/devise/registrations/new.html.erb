@@ -1,57 +1,86 @@
-
-<div id="signupbox" style="margin-top:50px" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-  <div class="panel panel-info">
-    <div class="panel-heading">
-      <div class="panel-title">Sign Up</div>
-    </div>  
-  <div style="padding-top:30px" class="panel-body">
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name),:class=>"form-horizontal") do |f| %>
-    <%= devise_error_messages! %>
-
-    <div class="form-group">
-      <label for="email" class="col-md-3 control-label">Email</label>
-      <div class="col-md-9">
-         <%= f.email_field :email, autofocus: true, :class=>"form-control", :placeholder=>"Email Address" %>
-      </div>
-    </div>
-
-    <div class="form-group">
-      <label for="password" class="col-md-3 control-label">Password</label>
-      <div class="col-md-9">                                      
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "off",:class=>"form-control", :placeholder=>"Password" %>
-      </div>
-      </div>
-     <div class="form-group">
-        <label for="password" class="col-md-3 control-label">Confirm Password</label>
-        <div class="col-md-9" style="margin-bottom: 10px;">                                       
-            <%= f.password_field :password_confirmation, autocomplete: "off",:class=>"form-control", :placeholder=>"Confirm Password" %>
+<div class="padding">
+  <div class="full col-sm-9"> 
+    <div class="main-login main-center">
+      <!-- <form class="form-horizontal" method="post" action="#"> -->
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name),:class=>"form-horizontal") do |f| %>
+        <%= devise_error_messages! %>
+        
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">First Name</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <!-- <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/> -->
+               <%= f.text_field :firstname, autofocus: true, :class=>"form-control", :placeholder=>"First Name" %>
+            </div>
+          </div>
         </div>
-     </div> 
+        <div class="form-group">
+          <label for="name" class="cols-sm-2 control-label">Last Name</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user" aria-hidden="true"></i></span>
+              <!-- <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/> -->
+               <%= f.text_field :lastname, autofocus: true, :class=>"form-control", :placeholder=>"Last Name" %>
+            </div>
+          </div>
+        </div>
 
-     <div class="form-group">
-        <label for="firstname" class="col-md-3 control-label">First Name</label>
-        <div class="col-md-9" style="margin-bottom: 10px;">
-            <%= f.text_field :firstname, autofocus: true, :class=>"form-control", :placeholder=>"First Name" %>
+        <div class="form-group">
+          <label for="email" class="cols-sm-2 control-label">Your Email</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i></span>
+              <!-- <input type="text" class="form-control" name="email" id="email"  placeholder="Enter your Email"/> -->
+              <%= f.email_field :email, autofocus: true, :class=>"form-control", :placeholder=>"Email Address" %>
+            </div>
+          </div>
         </div>
-    </div>
-    <div class="form-group">
-        <label for="lastname" class="col-md-3 control-label">Last Name</label>
-        <div class="col-md-9" style="margin-bottom: 10px;">
-            <%= f.text_field :lastname, autofocus: true, :class=>"form-control", :placeholder=>"Last Name" %>
+
+       <!--  <div class="form-group">
+          <label for="username" class="cols-sm-2 control-label">Username</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
+              <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+            </div>
+          </div>
+        </div> -->
+
+        <div class="form-group">
+          <label for="password" class="cols-sm-2 control-label">Password</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+              <!-- <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/> -->
+               <%= f.password_field :password, autocomplete: "off",:class=>"form-control", :placeholder=>"Password" %>
+            </div>
+          </div>
         </div>
-    </div>
-     <div class="form-group">
-        <!-- Button -->                                        
-        <div class="col-md-offset-3 col-md-9">
-            <%=f.submit 'Sign up', :class=>"btn btn-info"%>
+
+        <div class="form-group">
+          <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
+          <div class="cols-sm-10">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock" aria-hidden="true"></i></span>
+              <!-- <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/> -->
+               <%= f.password_field :password_confirmation, autocomplete: "off",:class=>"form-control", :placeholder=>"Confirm Password" %>
+            </div>
+          </div>
         </div>
+
+        <div class="form-group ">
+          <!-- <button type="button" class="btn btn-primary btn-lg btn-block login-button">Register</button> -->
+           <%=f.submit 'Sign up', :class=>"btn btn-primary btn-lg btn-block login-button"%>
+        </div>
+        <div class="login-register">
+                <a href="/users/sign_in">Login</a>
+
+             </div>
+      <!-- </form> -->
+      <%end%>
     </div>
-  <% end %>
-  </div>
-  <%#= render "devise/shared/links" %>
   </div>
 </div>
+
 

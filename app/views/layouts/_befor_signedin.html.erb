@@ -5,29 +5,19 @@
               <!-- sidebar -->
               <div class="column col-sm-2 col-xs-1 sidebar-offcanvas" id="sidebar">
                 
-                  <ul class="nav">
+                <ul class="nav">
                   <li><a href="#" data-toggle="offcanvas" class="visible-xs text-center"><i class="glyphicon glyphicon-chevron-right"></i></a></li>
                 </ul>
                  
-                  <ul class="nav hidden-xs" id="lg-menu">
-                      <!-- <li class="active"><a href="#featured"><i class="glyphicon glyphicon-list-alt"></i> Featured</a></li> -->
-                      <li><%= link_to  '' do %><i class="">=></i> Interview Question (Ruby On Rails)<% end %></li>
-                      <!-- <li><a href="#"><i class="glyphicon glyphicon-paperclip"></i> Saved</a></li> -->
-                      <!-- <li><a href="#"><i class="glyphicon glyphicon-refresh"></i> Refresh</a></li> -->
+                 <ul class="nav nav-pills nav-stacked hidden-xs" id="lg-menu">                   
+                      <li class="active"><%= link_to  home_index_path do %><b>Interview Questions (Ruby On Rails)</b><% end %></li>
+                       <li><%= link_to  blogs_path do %><b>Blogs</b><% end %></li>               
                   </ul>
                   <ul class="list-unstyled hidden-xs" id="sidebar-footer">
                       <li>
                         <a href="#"><h3>No Worries</h3> <i class="glyphicon glyphicon-heart-empty"></i> Ruby</a>
                       </li>
-                  </ul>
-                
-                  <!-- tiny only nav-->
-               <!--  <ul class="nav visible-xs" id="xs-menu">
-                      <li><a href="#featured" class="text-center"><i class="glyphicon glyphicon-list-alt"></i></a></li>
-                      <li><a href="#stories" class="text-center"><i class="glyphicon glyphicon-list"></i></a></li>
-                      <li><a href="#" class="text-center"><i class="glyphicon glyphicon-paperclip"></i></a></li>
-                      <li><a href="#" class="text-center"><i class="glyphicon glyphicon-refresh"></i></a></li>
-                  </ul> -->
+                  </ul>    
                 
               </div>
               <!-- /sidebar -->
@@ -41,10 +31,7 @@
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
                           <span class="sr-only">Toggle</span>
                           <span class="icon-bar"></span>
-                    <!-- <span class="icon-bar"></span>
-                    <span class="icon-bar"></span> -->
                         </button>
-                        <!-- <a href="/" class="navbar-brand logo">b</a> -->
                         <a href="/" class="navbar-brand logo2">YOYORuby</a>
                       </div>
                       <nav class="collapse navbar-collapse" role="navigation">
@@ -72,10 +59,7 @@
                       <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-user"></i></a>
-                          <ul class="dropdown-menu">
-                            <!-- <li><a href="">Edit Profile</a></li> -->
-                            <!-- <li><a href="">Blog</a></li> -->
-                            <!-- <li><%#= link_to 'Members',all_members_home_index_path%></li> -->
+                          <ul class="dropdown-menu">                            
                             <li><a href="">Loged in as <%= get_desplay_name(current_user)%> </a></li>
                             <li><%= link_to 'Logout',destroy_user_session_path, method: :delete%></li>
                           </ul>
@@ -86,8 +70,9 @@
                       </nav>
                   </div>
                   <!-- /top nav -->
-
-                  <%= yield %>
+                  <div class="" style="">
+                    <%= yield %>
+                  </div>
               </div>
                 <!-- /main -->
           
